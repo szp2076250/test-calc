@@ -10,11 +10,10 @@
 #define UIAIP IUIAutomationInvokePattern
 #define CALL_RESULT(hr) if(FAILED(hr)) {std::cout<<"an error happen"<<std::endl; system("pause");}else{std::cout<<"this step ok.."<<std::endl; }
 #define SAFE_RELEASE(s) if(s!=NULL) s->Release();
-    
+
 #pragma comment(lib, "comsuppw.lib") 
 
 extern void log_info(std::string info);
-
 
 class UIAManager
 {
@@ -25,7 +24,7 @@ private:
 	IUIAutomation * m_pIUAutomation;
 	UIAE * m_pRoot;
 	std::vector<IUIAutomationElement *> m_sElement;
-	static UIAManager * pInstance;
+	static UIAManager * pInstance ;
 	
 public:
 	void SetRoot(UIAE * pe) { m_pRoot = pe; }
@@ -34,6 +33,7 @@ public:
 	bool SetForce(UIAE * pae);
 	UIAE  * GetElementByHwnd(HWND hwnd);
 	UIAE * GetElementByAIDEx(std::string strAid);
+	UIAE * GetElementByAidPath(std::string strAidPath);
 	UIAIP * GetElementByAID(std::string strAid);
 	UIAIP * GetElementByCondition(UIAC * uiac);
 	UIAE  * GetRoot(){ return m_pRoot; }

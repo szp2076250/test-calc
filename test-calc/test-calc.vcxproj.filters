@@ -27,6 +27,9 @@
     <ClInclude Include="UIAManager.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="PathParse.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -36,6 +39,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="UIAManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PathParse.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -6,7 +6,7 @@
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	system("START calc");
+	system("Appwiz.cpl");
 	Sleep(500);
 	UIA->Invoke(UIA->GetElementByAID("135"));
 	Sleep(500);
@@ -21,7 +21,6 @@ int _tmain(int argc, _TCHAR* argv[])
 	UIA->Invoke(UIA->GetElementByAID("131"));
 	Sleep(500);
 	UIA->Invoke(UIA->GetElementByAID("134"));
-	std::cout << "Love You !"<<std::endl;
 	system("pause");
 	return 0;
 }

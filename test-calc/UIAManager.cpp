@@ -57,7 +57,11 @@ UIAE * UIAManager::GetElementByAIDEx(std::string strAid)
 		return NULL;
 	}
 	return pFound;
+}
 
+UIAE * UIAManager::GetElementByAidPath(std::string strAidPath) {
+	
+	return nullptr;
 }
 
 UIAIP * UIAManager::GetElementByAID(std::string strAid)
@@ -70,13 +74,8 @@ UIAIP * UIAManager::GetElementByAID(std::string strAid)
 	return GetElementByCondition(pCondition);
 }
 
-
-
-
-
 UIAIP * UIAManager::GetElementByCondition(UIAC * uiac)
 {
-	
 	UIAE * pFound=NULL;
 	CALL_RESULT(GetRoot()->FindFirst(TreeScope_Subtree, uiac, &pFound));
 	if (pFound == NULL)
@@ -105,7 +104,7 @@ UIAE * UIAManager::GetElementByHwnd(HWND hwnd)
 
 bool UIAManager::Invoke(UIAIP * pattern)
 {
-	if (pattern == NULL) return false;
+	if (pattern == NULL) return false;	
 	pattern->Invoke();
 	return true;
 }
@@ -129,7 +128,7 @@ bool UIAManager::ClickElement(UIAE * pae)
 	UIA_HWND hd;
 	pae->get_CurrentNativeWindowHandle(&hd);
 	POINT point;
-	BOOL  bClickable;
+	BOOL bClickable = FALSE;
 	SetForce(pae);
 	if (!bClickable)
 	{
@@ -157,6 +156,5 @@ UIAManager::UIAManager(void)
 
 UIAManager::~UIAManager(void)
 {
-	
 	CoUninitialize();
 }
